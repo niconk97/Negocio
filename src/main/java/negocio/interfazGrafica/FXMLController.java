@@ -1,4 +1,4 @@
-package negocio;
+package negocio.interfazGrafica;
 
 import java.net.URL;
 import java.util.ResourceBundle;
