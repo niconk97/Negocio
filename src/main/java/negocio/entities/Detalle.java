@@ -22,11 +22,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Detalles.findByNumero", query = "SELECT d FROM Detalles d WHERE d.detallesPK.numero = :numero")
     , @NamedQuery(name = "Detalles.findByCodigo", query = "SELECT d FROM Detalles d WHERE d.detallesPK.codigo = :codigo")
     , @NamedQuery(name = "Detalles.findByCantidad", query = "SELECT d FROM Detalles d WHERE d.cantidad = :cantidad")})
-public class Detalles implements Serializable {
+public class Detalle implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
-    protected DetallesPK detallesPK;
+    protected DetallePK detallesPK;
     @Basic(optional = false)
     @Column(name = "cantidad")
     private int cantidad;
@@ -34,29 +34,29 @@ public class Detalles implements Serializable {
         @JoinColumn(name = "letra", referencedColumnName = "letra", insertable = false, updatable = false)
         , @JoinColumn(name = "numero", referencedColumnName = "numero", insertable = false, updatable = false)})
     @ManyToOne(optional = false)
-    private Facturas facturas;
+    private Factura facturas;
 
-    public Detalles() {
+    public Detalle() {
     }
 
-    public Detalles(DetallesPK detallesPK) {
+    public Detalle(DetallePK detallesPK) {
         this.detallesPK = detallesPK;
     }
 
-    public Detalles(DetallesPK detallesPK, int cantidad) {
+    public Detalle(DetallePK detallesPK, int cantidad) {
         this.detallesPK = detallesPK;
         this.cantidad = cantidad;
     }
 
-    public Detalles(Character letra, int numero, int codigo) {
-        this.detallesPK = new DetallesPK(letra, numero, codigo);
+    public Detalle(Character letra, int numero, int codigo) {
+        this.detallesPK = new DetallePK(letra, numero, codigo);
     }
 
-    public DetallesPK getDetallesPK() {
+    public DetallePK getDetallesPK() {
         return detallesPK;
     }
 
-    public void setDetallesPK(DetallesPK detallesPK) {
+    public void setDetallesPK(DetallePK detallesPK) {
         this.detallesPK = detallesPK;
     }
 
@@ -68,11 +68,11 @@ public class Detalles implements Serializable {
         this.cantidad = cantidad;
     }
 
-    public Facturas getFacturas() {
+    public Factura getFacturas() {
         return facturas;
     }
 
-    public void setFacturas(Facturas facturas) {
+    public void setFacturas(Factura facturas) {
         this.facturas = facturas;
     }
 
@@ -86,10 +86,10 @@ public class Detalles implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Detalles)) {
+        if (!(object instanceof Detalle)) {
             return false;
         }
-        Detalles other = (Detalles) object;
+        Detalle other = (Detalle) object;
         if ((this.detallesPK == null && other.detallesPK != null) || (this.detallesPK != null && !this.detallesPK.equals(other.detallesPK))) {
             return false;
         }

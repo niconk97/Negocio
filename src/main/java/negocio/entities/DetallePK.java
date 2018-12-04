@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class FacturasPK implements Serializable {
+public class DetallePK implements Serializable {
 
     @Basic(optional = false)
     @Column(name = "letra")
@@ -14,13 +14,17 @@ public class FacturasPK implements Serializable {
     @Basic(optional = false)
     @Column(name = "numero")
     private int numero;
+    @Basic(optional = false)
+    @Column(name = "codigo")
+    private int codigo;
 
-    public FacturasPK() {
+    public DetallePK() {
     }
 
-    public FacturasPK(Character letra, int numero) {
+    public DetallePK(Character letra, int numero, int codigo) {
         this.letra = letra;
         this.numero = numero;
+        this.codigo = codigo;
     }
 
     public Character getLetra() {
@@ -39,25 +43,37 @@ public class FacturasPK implements Serializable {
         this.numero = numero;
     }
 
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
         hash += (letra != null ? letra.hashCode() : 0);
         hash += (int) numero;
+        hash += (int) codigo;
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof FacturasPK)) {
+        if (!(object instanceof DetallePK)) {
             return false;
         }
-        FacturasPK other = (FacturasPK) object;
+        DetallePK other = (DetallePK) object;
         if ((this.letra == null && other.letra != null) || (this.letra != null && !this.letra.equals(other.letra))) {
             return false;
         }
         if (this.numero != other.numero) {
+            return false;
+        }
+        if (this.codigo != other.codigo) {
             return false;
         }
         return true;
@@ -65,7 +81,7 @@ public class FacturasPK implements Serializable {
 
     @Override
     public String toString() {
-        return "negocio.entities.FacturasPK[ letra=" + letra + ", numero=" + numero + " ]";
+        return "negocio.entities.DetallesPK[ letra=" + letra + ", numero=" + numero + ", codigo=" + codigo + " ]";
     }
     
 }

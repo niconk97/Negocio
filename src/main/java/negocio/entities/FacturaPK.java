@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class DetallesPK implements Serializable {
+public class FacturaPK implements Serializable {
 
     @Basic(optional = false)
     @Column(name = "letra")
@@ -14,17 +14,13 @@ public class DetallesPK implements Serializable {
     @Basic(optional = false)
     @Column(name = "numero")
     private int numero;
-    @Basic(optional = false)
-    @Column(name = "codigo")
-    private int codigo;
 
-    public DetallesPK() {
+    public FacturaPK() {
     }
 
-    public DetallesPK(Character letra, int numero, int codigo) {
+    public FacturaPK(Character letra, int numero) {
         this.letra = letra;
         this.numero = numero;
-        this.codigo = codigo;
     }
 
     public Character getLetra() {
@@ -43,37 +39,25 @@ public class DetallesPK implements Serializable {
         this.numero = numero;
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
         hash += (letra != null ? letra.hashCode() : 0);
         hash += (int) numero;
-        hash += (int) codigo;
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof DetallesPK)) {
+        if (!(object instanceof FacturaPK)) {
             return false;
         }
-        DetallesPK other = (DetallesPK) object;
+        FacturaPK other = (FacturaPK) object;
         if ((this.letra == null && other.letra != null) || (this.letra != null && !this.letra.equals(other.letra))) {
             return false;
         }
         if (this.numero != other.numero) {
-            return false;
-        }
-        if (this.codigo != other.codigo) {
             return false;
         }
         return true;
@@ -81,7 +65,7 @@ public class DetallesPK implements Serializable {
 
     @Override
     public String toString() {
-        return "negocio.entities.DetallesPK[ letra=" + letra + ", numero=" + numero + ", codigo=" + codigo + " ]";
+        return "negocio.entities.FacturasPK[ letra=" + letra + ", numero=" + numero + " ]";
     }
     
 }

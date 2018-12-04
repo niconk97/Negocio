@@ -27,11 +27,11 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Facturas.findByNumero", query = "SELECT f FROM Facturas f WHERE f.facturasPK.numero = :numero")
     , @NamedQuery(name = "Facturas.findByFecha", query = "SELECT f FROM Facturas f WHERE f.fecha = :fecha")
     , @NamedQuery(name = "Facturas.findByMonto", query = "SELECT f FROM Facturas f WHERE f.monto = :monto")})
-public class Facturas implements Serializable {
+public class Factura implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @EmbeddedId
-    protected FacturasPK facturasPK;
+    protected FacturaPK facturasPK;
     @Column(name = "fecha")
     @Temporal(TemporalType.DATE)
     private Date fecha;
@@ -40,26 +40,26 @@ public class Facturas implements Serializable {
     private Double monto;
     @JoinColumn(name = "codigocliente", referencedColumnName = "codigo")
     @ManyToOne(optional = false)
-    private Clientes codigocliente;
+    private Cliente codigocliente;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "facturas")
-    private Collection<Detalles> detallesCollection;
+    private Collection<Detalle> detallesCollection;
 
-    public Facturas() {
+    public Factura() {
     }
 
-    public Facturas(FacturasPK facturasPK) {
+    public Factura(FacturaPK facturasPK) {
         this.facturasPK = facturasPK;
     }
 
-    public Facturas(Character letra, int numero) {
-        this.facturasPK = new FacturasPK(letra, numero);
+    public Factura(Character letra, int numero) {
+        this.facturasPK = new FacturaPK(letra, numero);
     }
 
-    public FacturasPK getFacturasPK() {
+    public FacturaPK getFacturasPK() {
         return facturasPK;
     }
 
-    public void setFacturasPK(FacturasPK facturasPK) {
+    public void setFacturasPK(FacturaPK facturasPK) {
         this.facturasPK = facturasPK;
     }
 
@@ -79,20 +79,20 @@ public class Facturas implements Serializable {
         this.monto = monto;
     }
 
-    public Clientes getCodigocliente() {
+    public Cliente getCodigocliente() {
         return codigocliente;
     }
 
-    public void setCodigocliente(Clientes codigocliente) {
+    public void setCodigocliente(Cliente codigocliente) {
         this.codigocliente = codigocliente;
     }
 
     @XmlTransient
-    public Collection<Detalles> getDetallesCollection() {
+    public Collection<Detalle> getDetallesCollection() {
         return detallesCollection;
     }
 
-    public void setDetallesCollection(Collection<Detalles> detallesCollection) {
+    public void setDetallesCollection(Collection<Detalle> detallesCollection) {
         this.detallesCollection = detallesCollection;
     }
 
@@ -106,10 +106,10 @@ public class Facturas implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Facturas)) {
+        if (!(object instanceof Factura)) {
             return false;
         }
-        Facturas other = (Facturas) object;
+        Factura other = (Factura) object;
         if ((this.facturasPK == null && other.facturasPK != null) || (this.facturasPK != null && !this.facturasPK.equals(other.facturasPK))) {
             return false;
         }

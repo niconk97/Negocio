@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Clientes.findByCuit", query = "SELECT c FROM Clientes c WHERE c.cuit = :cuit")
     , @NamedQuery(name = "Clientes.findByDireccion", query = "SELECT c FROM Clientes c WHERE c.direccion = :direccion")
     , @NamedQuery(name = "Clientes.findByComentarios", query = "SELECT c FROM Clientes c WHERE c.comentarios = :comentarios")})
-public class Clientes implements Serializable {
+public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -48,16 +48,16 @@ public class Clientes implements Serializable {
     @Column(name = "comentarios")
     private String comentarios;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "codigocliente")
-    private Collection<Facturas> facturasCollection;
+    private Collection<Factura> facturasCollection;
 
-    public Clientes() {
+    public Cliente() {
     }
 
-    public Clientes(Integer codigo) {
+    public Cliente(Integer codigo) {
         this.codigo = codigo;
     }
 
-    public Clientes(Integer codigo, String nombre, String apellido) {
+    public Cliente(Integer codigo, String nombre, String apellido) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -112,11 +112,11 @@ public class Clientes implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Facturas> getFacturasCollection() {
+    public Collection<Factura> getFacturasCollection() {
         return facturasCollection;
     }
 
-    public void setFacturasCollection(Collection<Facturas> facturasCollection) {
+    public void setFacturasCollection(Collection<Factura> facturasCollection) {
         this.facturasCollection = facturasCollection;
     }
 
@@ -130,10 +130,10 @@ public class Clientes implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Clientes)) {
+        if (!(object instanceof Cliente)) {
             return false;
         }
-        Clientes other = (Clientes) object;
+        Cliente other = (Cliente) object;
         if ((this.codigo == null && other.codigo != null) || (this.codigo != null && !this.codigo.equals(other.codigo))) {
             return false;
         }
