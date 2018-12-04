@@ -23,7 +23,7 @@ public class ClienteR extends GenericR<Cliente> implements I_ClienteRepository{
     @Override
     public List<Cliente> getLikeNombre(String nombre) {
         Query query = em.createNamedQuery("Clientes.findLikeNombre");
-        query.setParameter("nombre", nombre);
+        query.setParameter("nombre", "%"+nombre+"%");
         return query.getResultList();
     }
 
@@ -37,15 +37,15 @@ public class ClienteR extends GenericR<Cliente> implements I_ClienteRepository{
     @Override
     public List<Cliente> getLikeApellido(String apellido) {
         Query query = em.createNamedQuery("Clientes.findLikeApellido");
-        query.setParameter("apellido", apellido);
+        query.setParameter("apellido", "%"+apellido+"%");
         return query.getResultList();
     }
 
     @Override
     public List<Cliente> getLikeApellidoNombre(String apellido, String nombre) {
         Query query = em.createNamedQuery("Clientes.findLikeApellidoNombre");
-        query.setParameter("nombre", nombre);
-        query.setParameter("apellido", apellido);
+        query.setParameter("nombre", "%"+nombre+"%");
+        query.setParameter("apellido", "%"+apellido+"%");
         return query.getResultList();
     }
 

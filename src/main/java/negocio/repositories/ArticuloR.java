@@ -16,7 +16,7 @@ public class ArticuloR extends GenericR<Articulo> implements I_ArticuloRepositor
     @Override
     public List<Articulo> getLikeDescripcion(String descripcion) {
         Query query = em.createNamedQuery("Articulos.findLikeDescripcion");
-        query.setParameter("descripcion", descripcion);
+        query.setParameter("descripcion", "%"+descripcion+"%");
         return query.getResultList();
     }
 
@@ -30,7 +30,7 @@ public class ArticuloR extends GenericR<Articulo> implements I_ArticuloRepositor
     @Override
     public List<Articulo> getLikeStock(Integer stock) {
         Query query = em.createNamedQuery("Articulos.findLikeStock");
-        query.setParameter("stock", stock);
+        query.setParameter("stock", "%"+stock+"%");
         return query.getResultList();
     }
     
