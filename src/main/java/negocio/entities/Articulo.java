@@ -46,6 +46,12 @@ public class Articulo implements Serializable {
         this.codigo = codigo;
     }
 
+    public Articulo(String descripcion, Double precio, Integer stock) {
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.stock = stock;
+    }
+
     public Integer getCodigo() {
         return codigo;
     }
@@ -100,7 +106,7 @@ public class Articulo implements Serializable {
 
     @Override
     public String toString() {
-        return "negocio.entities.Articulos[ codigo=" + codigo + " ]";
+        return "Articulo{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", precio=" + precio + ", stock=" + stock + '}';
     }
     
 }

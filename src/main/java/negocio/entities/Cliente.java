@@ -66,6 +66,13 @@ public class Cliente implements Serializable {
         this.apellido = apellido;
     }
 
+    public Cliente(String nombre, String apellido, String cuit, String direccion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cuit = cuit;
+        this.direccion = direccion;
+    }
+
     public Integer getCodigo() {
         return codigo;
     }
@@ -145,7 +152,8 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "negocio.entities.Clientes[ codigo=" + codigo + " ]";
+        return "Cliente{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellido=" + apellido + ", cuit=" + cuit + ", direccion=" + direccion + '}';
     }
+
     
 }
