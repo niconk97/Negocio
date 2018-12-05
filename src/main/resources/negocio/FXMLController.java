@@ -16,6 +16,7 @@ import negocio.entities.Articulo;
 import negocio.entities.Cliente;
 import negocio.repositories.ArticuloR;
 import negocio.repositories.ClienteR;
+import negocio.utils.TableFX;
 import negocio.utils.Validator;
 
 public class FXMLController implements Initializable {
@@ -40,6 +41,7 @@ public class FXMLController implements Initializable {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAPU");
         cr = new ClienteR(emf.createEntityManager());
         ar = new ArticuloR(emf.createEntityManager());
+        cargar();
     }    
 
     @FXML private void agregarCliente(ActionEvent event) {
@@ -54,7 +56,13 @@ public class FXMLController implements Initializable {
         lblInfoCliente.setText("Se ingreso el cliente con codigo:"+cliente.getCodigo());
         limpiarCliente();
     }
-
+    
+    private void cargar(){
+        //cargar tblArticulos
+        TableFX<Articulo> tableArticulos = new TableFX();
+        tableArticulos.cargar(tblArticulos, ar.getAll());
+    }
+    
     @FXML
     private void agregarArticulo(ActionEvent event) {
         if(!validarArticulo()) return;
