@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="591.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="negocio.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="591.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="negocio.interfazGrafica.FXMLController">
    <children>
       <TabPane layoutX="14.0" layoutY="14.0" prefHeight="575.0" prefWidth="437.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>

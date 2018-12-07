@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>negocio.MainApp</mainClass>
+        <mainClass>negocio.interfazGrafica.Negocio</mainClass>
     </properties>
 
     <organization>

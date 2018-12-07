@@ -22,11 +22,11 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "facturas")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Facturas.findAll", query = "SELECT f FROM Facturas f")
-    , @NamedQuery(name = "Facturas.findByLetra", query = "SELECT f FROM Facturas f WHERE f.facturasPK.letra = :letra")
-    , @NamedQuery(name = "Facturas.findByNumero", query = "SELECT f FROM Facturas f WHERE f.facturasPK.numero = :numero")
-    , @NamedQuery(name = "Facturas.findByFecha", query = "SELECT f FROM Facturas f WHERE f.fecha = :fecha")
-    , @NamedQuery(name = "Facturas.findByMonto", query = "SELECT f FROM Facturas f WHERE f.monto = :monto")})
+    @NamedQuery(name = "Factura.findAll", query = "SELECT f FROM Factura f")
+    , @NamedQuery(name = "Factura.findByLetra", query = "SELECT f FROM Factura f WHERE f.facturasPK.letra = :letra")
+    , @NamedQuery(name = "Factura.findByNumero", query = "SELECT f FROM Factura f WHERE f.facturasPK.numero = :numero")
+    , @NamedQuery(name = "Factura.findByFecha", query = "SELECT f FROM Factura f WHERE f.fecha = :fecha")
+    , @NamedQuery(name = "Factura.findByMonto", query = "SELECT f FROM Factura f WHERE f.monto = :monto")})
 public class Factura implements Serializable {
 
     private static final long serialVersionUID = 1L;

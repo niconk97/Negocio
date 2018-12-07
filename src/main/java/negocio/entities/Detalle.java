@@ -17,11 +17,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "detalles")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Detalles.findAll", query = "SELECT d FROM Detalles d")
-    , @NamedQuery(name = "Detalles.findByLetra", query = "SELECT d FROM Detalles d WHERE d.detallesPK.letra = :letra")
-    , @NamedQuery(name = "Detalles.findByNumero", query = "SELECT d FROM Detalles d WHERE d.detallesPK.numero = :numero")
-    , @NamedQuery(name = "Detalles.findByCodigo", query = "SELECT d FROM Detalles d WHERE d.detallesPK.codigo = :codigo")
-    , @NamedQuery(name = "Detalles.findByCantidad", query = "SELECT d FROM Detalles d WHERE d.cantidad = :cantidad")})
+    @NamedQuery(name = "Detalle.findAll", query = "SELECT d FROM Detalle d")
+    , @NamedQuery(name = "Detalle.findByLetra", query = "SELECT d FROM Detalle d WHERE d.detallesPK.letra = :letra")
+    , @NamedQuery(name = "Detalle.findByNumero", query = "SELECT d FROM Detalle d WHERE d.detallesPK.numero = :numero")
+    , @NamedQuery(name = "Detalle.findByCodigo", query = "SELECT d FROM Detalle d WHERE d.detallesPK.codigo = :codigo")
+    , @NamedQuery(name = "Detalle.findByCantidad", query = "SELECT d FROM Detalle d WHERE d.cantidad = :cantidad")})
 public class Detalle implements Serializable {
 
     private static final long serialVersionUID = 1L;

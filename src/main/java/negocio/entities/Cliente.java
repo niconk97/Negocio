@@ -20,16 +20,16 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "clientes")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Clientes.findAll", query = "SELECT c FROM Clientes c")
-    , @NamedQuery(name = "Clientes.findByCodigo", query = "SELECT c FROM Clientes c WHERE c.codigo = :codigo")
-    , @NamedQuery(name = "Clientes.findByNombre", query = "SELECT c FROM Clientes c WHERE c.nombre = :nombre")
-    , @NamedQuery(name = "Clientes.findLikeNombre", query = "SELECT c FROM Clientes c WHERE c.nombre like :nombre")
-    , @NamedQuery(name = "Clientes.findByApellido", query = "SELECT c FROM Clientes c WHERE c.apellido = :apellido")
-    , @NamedQuery(name = "Clientes.findLikeApellido", query = "SELECT c FROM Clientes c WHERE c.apellido like :apellido")
-    , @NamedQuery(name = "Clientes.findLikeApellidoNombre", query = "SELECT c FROM Clientes c WHERE c.apellido like :apellido and c.nombre like :nombre")
-    , @NamedQuery(name = "Clientes.findByCuit", query = "SELECT c FROM Clientes c WHERE c.cuit = :cuit")
-    , @NamedQuery(name = "Clientes.findByDireccion", query = "SELECT c FROM Clientes c WHERE c.direccion = :direccion")
-    , @NamedQuery(name = "Clientes.findByComentarios", query = "SELECT c FROM Clientes c WHERE c.comentarios = :comentarios")})
+    @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c")
+    , @NamedQuery(name = "Cliente.findByCodigo", query = "SELECT c FROM Cliente c WHERE c.codigo = :codigo")
+    , @NamedQuery(name = "Cliente.findByNombre", query = "SELECT c FROM Cliente c WHERE c.nombre = :nombre")
+    , @NamedQuery(name = "Cliente.findLikeNombre", query = "SELECT c FROM Cliente c WHERE c.nombre like :nombre")
+    , @NamedQuery(name = "Cliente.findByApellido", query = "SELECT c FROM Cliente c WHERE c.apellido = :apellido")
+    , @NamedQuery(name = "Cliente.findLikeApellido", query = "SELECT c FROM Cliente c WHERE c.apellido like :apellido")
+    , @NamedQuery(name = "Cliente.findLikeApellidoNombre", query = "SELECT c FROM Cliente c WHERE c.apellido like :apellido and c.nombre like :nombre")
+    , @NamedQuery(name = "Cliente.findByCuit", query = "SELECT c FROM Cliente c WHERE c.cuit = :cuit")
+    , @NamedQuery(name = "Cliente.findByDireccion", query = "SELECT c FROM Cliente c WHERE c.direccion = :direccion")
+    , @NamedQuery(name = "Cliente.findByComentarios", query = "SELECT c FROM Cliente c WHERE c.comentarios = :comentarios")})
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;

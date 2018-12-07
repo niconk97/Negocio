@@ -17,28 +17,28 @@ public class FacturaR extends GenericR<Factura> implements I_FacturaRepository{
     
     @Override
     public Factura getById(int numero){
-        Query query = em.createNamedQuery("Facturas.findByNumero");
+        Query query = em.createNamedQuery("Factura.findByNumero");
         query.setParameter("numero", numero);
         return (query.getResultList().isEmpty()) ? null : (Factura)query.getSingleResult();
     }
 
     @Override
     public List<Factura> getByLetra(Character letra) {
-        Query query = em.createNamedQuery("Facturas.findByLetra");
+        Query query = em.createNamedQuery("Factura.findByLetra");
         query.setParameter("letra", letra);
         return query.getResultList();
     }
 
     @Override
     public List<Factura> getByMonto(Double monto) {
-        Query query = em.createNamedQuery("Facturas.findByNumero");
+        Query query = em.createNamedQuery("Factura.findByNumero");
         query.setParameter("monto", monto);
         return query.getResultList();
     }
 
     @Override
     public List<Factura> getByFecha(Date fecha) {
-        Query query = em.createNamedQuery("Facturas.findByFecha");
+        Query query = em.createNamedQuery("Factura.findByFecha");
         query.setParameter("fecha", fecha);
         return query.getResultList();
     }

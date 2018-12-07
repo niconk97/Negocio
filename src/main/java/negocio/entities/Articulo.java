@@ -16,13 +16,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "articulos")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Articulos.findAll", query = "SELECT a FROM Articulos a")
-    , @NamedQuery(name = "Articulos.findByCodigo", query = "SELECT a FROM Articulos a WHERE a.codigo = :codigo")
-    , @NamedQuery(name = "Articulos.findByDescripcion", query = "SELECT a FROM Articulos a WHERE a.descripcion = :descripcion")
-    , @NamedQuery(name = "Articulos.findLikeDescripcion", query = "SELECT a FROM Articulos a WHERE a.descripcion like :descripcion")
-    , @NamedQuery(name = "Articulos.findByPrecio", query = "SELECT a FROM Articulos a WHERE a.precio = :precio")
-    , @NamedQuery(name = "Articulos.findLikeStock", query = "SELECT a FROM Articulos a WHERE a.stock like :stock")
-    , @NamedQuery(name = "Articulos.findByStock", query = "SELECT a FROM Articulos a WHERE a.stock = :stock")})
+    @NamedQuery(name = "Articulo.findAll", query = "SELECT a FROM Articulo a")
+    , @NamedQuery(name = "Articulo.findByCodigo", query = "SELECT a FROM Articulo a WHERE a.codigo = :codigo")
+    , @NamedQuery(name = "Articulo.findByDescripcion", query = "SELECT a FROM Articulo a WHERE a.descripcion = :descripcion")
+    , @NamedQuery(name = "Articulo.findLikeDescripcion", query = "SELECT a FROM Articulo a WHERE a.descripcion like :descripcion")
+    , @NamedQuery(name = "Articulo.findByPrecio", query = "SELECT a FROM Articulo a WHERE a.precio = :precio")
+    , @NamedQuery(name = "Articulo.findLikeStock", query = "SELECT a FROM Articulo a WHERE a.stock like :stock")
+    , @NamedQuery(name = "Articulo.findByStock", query = "SELECT a FROM Articulo a WHERE a.stock = :stock")})
 public class Articulo implements Serializable {
 
     private static final long serialVersionUID = 1L;
