@@ -49,3 +49,6 @@ add constraint FK_facturas_letra_numero
 foreign key (letra,numero)
 references facturas(letra,numero)
 on delete cascade;
+
+select * from articulos;
+select * from clientes;

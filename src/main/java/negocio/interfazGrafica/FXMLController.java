@@ -41,7 +41,7 @@ public class FXMLController implements Initializable {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAPU");
         cr = new ClienteR(emf.createEntityManager());
         ar = new ArticuloR(emf.createEntityManager());
-        cargar();
+        cargarArticulos();
     }    
 
     @FXML private void agregarCliente(ActionEvent event) {
@@ -57,7 +57,7 @@ public class FXMLController implements Initializable {
         limpiarCliente();
     }
     
-    private void cargar(){
+    private void cargarArticulos(){
         //cargar tblArticulos
         TableFX<Articulo> tableArticulos = new TableFX();
         tableArticulos.cargar(tblArticulos, ar.getAll());
@@ -75,6 +75,7 @@ public class FXMLController implements Initializable {
         ar.save(articulo);
         lblInfoArticulo.setText("Se ingreso el articulo con codigo:"+articulo.getCodigo());
         limpiarArticulo();
+        cargarArticulos();
     }
     private boolean validarCliente(){
         //valida nombre string entre 2 y 20 caracteres.

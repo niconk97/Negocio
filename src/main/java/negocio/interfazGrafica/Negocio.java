@@ -18,6 +18,14 @@ public class Negocio extends Application {
         stage.setTitle("Sistema de Negocio");
         stage.setScene(scene);
         stage.show();
+        
+        /*
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+          public void handle(WindowEvent we) {
+              System.out.println("Stage is closing");
+          }
+        });        
+        stage.close();*/
     }
 
     public static void main(String[] args) {
